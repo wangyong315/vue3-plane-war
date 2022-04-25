@@ -1,12 +1,11 @@
 <script setup lang="ts">
 
-import logo from './assets/logo.png'
-
+import Plane from "./components/Plane.vue";
 </script>
 
 <template>
   <Container>
-    <Sprite :texture="logo"></Sprite>
+    <Plane></Plane>
   </Container>
 </template>
 

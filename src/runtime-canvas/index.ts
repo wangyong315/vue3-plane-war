@@ -15,7 +15,7 @@ export const renderer = createRenderer<Container, Container>({
                 break;
             default:
                 throw new Error(`${type} 不存在`);
-                
+
                 break;
         }
         return element
@@ -25,8 +25,9 @@ export const renderer = createRenderer<Container, Container>({
             case 'texture':
                 (el as Sprite).texture = Texture.from(nextValue)
                 break;
-        
+
             default:
+              el[key] = nextValue
                 break;
         }
     },
@@ -58,5 +59,5 @@ export const renderer = createRenderer<Container, Container>({
 
 
 export const createApp = (rootComponent:any) => {
-    return renderer.createApp(rootComponent)
+  return renderer.createApp(rootComponent)
 }
