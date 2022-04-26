@@ -32,3 +32,12 @@ describe('Plane', () => {
     })
   })
 })
+
+describe('攻击', () => {
+  it('attack', () => {
+    const bullets = []
+    const plane = setupPlane({}, {}, bullets)
+    plane.attack()
+    expect(bullets.length).toBe(1)
+  })
+})

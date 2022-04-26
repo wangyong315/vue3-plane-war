@@ -5,13 +5,23 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-import planeImg from '../assets/plane.jpg'
-import { setupPlane } from '../game';
+import { PropType } from 'vue';
+import planeImg from '../assets/plane.png'
+import { Plane } from '../game';
 
-const plane = setupPlane(reactive({}))
+const { plane } = defineProps({
+  plane: {
+    type: Object as PropType<Plane>,
+    required: true
+  }
+})
 
 window.addEventListener('keydown', (e) => {
+
+  if(e.code === 'Space') {
+    plane.attack()
+  }
+
   switch (e.code) {
     case 'ArrowDown':
       plane.moveDown()
