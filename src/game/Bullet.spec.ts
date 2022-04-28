@@ -17,6 +17,6 @@ describe('Bullet', () => {
     bullet.border = 0
     bullet.onDestroy = vi.fn()
     bullet.move()
-    expect(bullet.y).toBe(0)
+    expect(bullet.onDestroy).toBeCalled()
   })
 })
